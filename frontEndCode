@@ -1,0 +1,29 @@
+<html>
+<body style = "background-color:powdergreen;">
+<h1 style="background-color:red" > hello Malay welcome to kubernetes Integration with python-CGI world ......<h1>
+
+<script>
+
+ function lw(){
+var i = document.getElementById("in1").value
+var xhr = new XMLHttpRequest();
+//xhr.onload
+
+xhr.open("GET", "http://10.0.2.15/cgi-bin/s.py?x=" + i, true);
+xhr.send();
+
+// output from above url
+xhr.onload = function (){
+                var output = xhr.responseText;
+                document.getElementById("d1").innerHTML = output;
+}
+}
+</script>
+[root@localhost ~ ] # :<input id="in1" />
+<button style="background-color: yellow" onclick="lw()">Click here to be Executed</button>
+<pre>
+<div id="d1">here we have output </div>
+</pre>
+
+</body>
+</html>
